@@ -25,7 +25,18 @@ const Register = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    // TODO
+    setSuccessMsg("");
+
+    for(const inputName in state) {
+      if(state[inputName] === "") {
+        setErrorMsg("All the fields are required.");
+        return;
+      }
+    }
+
+    setErrorMsg("");
+
+    setSuccessMsg("You have successfully registered");
   };
 
   return (
